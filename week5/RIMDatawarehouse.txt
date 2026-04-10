@@ -1,0 +1,93 @@
+CREATE TABLE Monteur (
+monteur_key INTEGER PRIMARY KEY,
+naam TEXT,
+woonplaats TEXT,
+uurloon REAL
+);
+
+CREATE TABLE Klant (
+klant_key INTEGER PRIMARY KEY,
+klantnr INTEGER,
+naam TEXT,
+woonplaats TEXT,
+adres TEXT,
+geslacht TEXT,
+geboortedatum DATE);
+
+CREATE TABLE Filiaal(
+filiaal_key INTEGER PRIMARY KEY,
+filiaalnr INTEGER,
+naam TEXT,
+adres TEXT,
+provincie TEXT);
+
+CREATE TABLE Datum(
+datum_key INTEGER PRIMARY KEY,
+dag INTEGER,
+maand TEXT,
+kwartaal TEXT,
+jaar INTEGER);
+
+CREATE TABLE InkoopPeriode(
+periode_key INTEGER PRIMARY KEY,
+inkoopmaand TEXT,
+inkoopjaar INTEGER);
+
+CREATE TABLE Leverancier(
+lev_key INTEGER PRIMARY KEY,
+leveranciernr INTEGER,
+naam TEXT,
+adres TEXT,
+woonplaats TEXT);
+
+CREATE TABLE Product(
+product_key INTEGER PRIMARY KEY,
+productnr INTEGER,
+product_type TEXT,
+soort TEXT,
+merk TEXT,
+type TEXT,
+kleur TEXT,
+fabrikant TEXT);
+
+CREATE TABLE Inkoop(
+inkoop_key INTEGER PRIMARY KEY,
+product_key INTEGER NOT NULL,
+periode_key INTEGER NOT NULL,
+lev_key INTEGER NOT NULL,
+aantal INTEGER,
+inkoopprijs REAL,
+FOREIGN KEY (product_key) REFERENCES Product(product_key),
+FOREIGN KEY(periode_key) REFERENCES InkoopPeriode(periode_key),
+FOREIGN KEY(lev_key) REFERENCES Leverancier(lev_key));
+
+CREATE TABLE Verkoop(
+verkoop_key INTEGER PRIMARY KEY,
+klant_key INTEGER NOT NULL,
+monteur_key INTEGER,
+product_key INTEGER NOT NULL,
+filiaal_key INTEGER NOT NULL,
+datum_key INTEGER NOT NULL,
+verkoopprijs REAL,
+aantal INTEGER,
+FOREIGN KEY (klant_key) REFERENCES Klant(klant_key),
+FOREIGN KEY (monteur_key) REFERENCES Monteur(monteur_key),
+FOREIGN KEY (product_key) REFERENCES Product(product_key),
+FOREIGN KEY (filiaal_key) REFERENCES Filiaal(filiaal_key),
+FOREIGN KEY (datum_key) REFERENCES Datum(datum_key));
+
+CREATE TABLE Onderhoud (
+	onderhoud_key INT PRIMARY KEY,
+	product_key INT NOT NULL,
+	monteur_key INT NOT NULL,
+	filiaal_key INT NOT NULL,
+	datum DATE,
+	starttijd TIME,
+	eindtijd TIME,
+	uurloon REAL,
+	FOREIGN KEY (product_key) REFERENCES Product(product_key),
+	FOREIGN KEY (monteur_key) REFERENCES Monteur(monteur_key),
+	FOREIGN KEY (filiaal_key) REFERENCES Filiaal(filiaal_key)
+);
+
+
