@@ -1,5 +1,6 @@
 CREATE TABLE Monteur (
 monteur_key INTEGER PRIMARY KEY,
+monteurnr INTEGER,
 naam TEXT,
 woonplaats TEXT,
 uurloon REAL
