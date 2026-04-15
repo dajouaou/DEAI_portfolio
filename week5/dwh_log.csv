@@ -21,3 +21,6 @@ timestamp,stap,tabel,actie,aantal,status,melding
 2026-04-15 11:10:43,TEST,Fiets_Verkoop_Monteur,update_sdm,1,OK,uurloon monteurnr=1 aangepast
 2026-04-15 11:10:43,TEST,Accessoire_Verkoop_Monteur,update_sdm,1,OK,uurloon monteurnr=1 aangepast
 2026-04-15 11:11:26,SCD2,Monteur,historisering,10,OK,
+2026-04-15 12:29:28,TEST,Dummy_Tabel,insert,0,ERROR,test fout voor powerbi
+2026-04-15 13:01:24,SCD1,Klant,insert,0,ERROR,test error: klant kon niet worden geladen
+2026-04-15 13:02:38,SCD1,Klant,insert,0,ERROR,test fout bij laden klant dimensie
