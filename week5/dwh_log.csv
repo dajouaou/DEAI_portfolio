@@ -1,0 +1,23 @@
+timestamp,stap,tabel,actie,aantal,status,melding
+2026-04-15 10:50:53,SCD1,Klant,insert/update,30,OK,
+2026-04-15 10:57:05,SCD1,Product,insert/update,88,OK,
+2026-04-15 10:57:09,SCD1,Leverancier,insert/update,15,OK,
+2026-04-15 10:57:14,DIM,Datum,insert,172,OK,
+2026-04-15 10:57:18,DIM,InkoopPeriode,insert,12,OK,
+2026-04-15 10:57:21,SCD2,Monteur,historisering,10,OK,
+2026-04-15 10:57:26,SCD2,Filiaal,historisering,4,OK,
+2026-04-15 10:57:30,FACT,Verkoop,insert,251,OK,
+2026-04-15 10:57:35,FACT,Onderhoud,insert,29,OK,
+2026-04-15 10:57:39,FACT,Inkoop,insert,150,OK,
+2026-04-15 10:57:43,TEST,Fiets_Verkoop_Klant,update_sdm,1,OK,woonplaats klantnr=1 aangepast
+2026-04-15 10:58:47,TEST,Fiets_Verkoop_Klant,update_sdm,1,OK,woonplaats klantnr=1 aangepast
+2026-04-15 11:02:30,TEST,Fiets_Verkoop_Klant,update_sdm,1,OK,woonplaats aangepast
+2026-04-15 11:02:30,TEST,Accessoire_Verkoop_Klant,update_sdm,1,OK,woonplaats aangepast
+2026-04-15 11:03:59,SCD1,Klant,insert/update,30,OK,
+2026-04-15 11:05:20,TEST,Fiets_Verkoop_Monteur,update_sdm,1,OK,uurloon monteurnr=1 aangepast
+2026-04-15 11:05:20,TEST,Accessoire_Verkoop_Monteur,update_sdm,1,OK,uurloon monteurnr=1 aangepast
+2026-04-15 11:05:50,SCD2,Monteur,historisering,10,OK,
+2026-04-15 11:08:37,SCD2,Monteur,historisering,10,OK,
+2026-04-15 11:10:43,TEST,Fiets_Verkoop_Monteur,update_sdm,1,OK,uurloon monteurnr=1 aangepast
+2026-04-15 11:10:43,TEST,Accessoire_Verkoop_Monteur,update_sdm,1,OK,uurloon monteurnr=1 aangepast
+2026-04-15 11:11:26,SCD2,Monteur,historisering,10,OK,
