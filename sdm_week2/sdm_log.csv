@@ -1,0 +1,23 @@
+timestamp,stap,tabel,actie,aantal,status,melding
+2026-04-15 11:35:32,FULL_REFRESH,SDM,delete_all,23,OK,alle sdm tabellen geleegd
+2026-04-15 11:35:36,LOAD,Onderhoud_Fabrikant,insert,11,OK,
+2026-04-15 11:35:36,LOAD,Onderhoud_Filiaal,insert,5,OK,
+2026-04-15 11:35:36,LOAD,Onderhoud_Fiets,insert,30,OK,
+2026-04-15 11:35:36,LOAD,Onderhoud_Monteur,insert,15,OK,
+2026-04-15 11:35:36,LOAD,Onderhoud,insert,50,OK,
+2026-04-15 11:35:39,LOAD,Accessoire_Inkoop_Leverancier,insert,5,OK,
+2026-04-15 11:35:39,LOAD,Accessoire_Inkoop_Accessoire,insert,13,OK,
+2026-04-15 11:35:39,LOAD,Accessoire_Inkoop,insert,50,OK,
+2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Klant,insert,20,OK,
+2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Accessoire,insert,10,OK,
+2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Monteur,insert,10,OK,
+2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Filiaal,insert,4,OK,
+2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Leverancier,insert,5,OK,
+2026-04-15 11:35:41,LOAD,Accessoire_Verkoop,insert,100,OK,
+2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Klant,insert,25,OK,
+2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Fiets,insert,75,OK,
+2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Monteur,insert,10,OK,
+2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Fabrikant,insert,10,OK,
+2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Filiaal,insert,4,OK,
+2026-04-15 11:35:45,LOAD,Fiets_Verkoop,insert,150,OK,
+2026-04-15 11:35:49,CHECK,Fiets_Verkoop_Filiaal,select_check,0,OK,controlequery uitgevoerd

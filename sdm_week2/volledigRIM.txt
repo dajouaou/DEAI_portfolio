@@ -1,153 +1,114 @@
 -- Onderhoud
-CREATE TABLE Onderhoud (
-	onderhoudnr INT PRIMARY KEY,
-	datum DATE,
-	starttijd TIME,
-	eindtijd TIME,
-	fiets INT NOT NULL,
-	monteur INT NOT NULL,
-	FOREIGN KEY (fiets) REFERENCES Onderhoud_Fiets(fietsnr),
-	FOREIGN KEY (monteur) REFERENCES Onderhoud_Monteur(monteurnr)
-);
-
-CREATE TABLE Onderhoud_Monteur (
-	monteurnr INT PRIMARY KEY,
-	naam VARCHAR(45),
-	woonplaats VARCHAR(45),
-	uurloon FLOAT,
-	filiaal INT NOT NULL,
-	FOREIGN KEY (filiaal) REFERENCES Onderhoud_Filiaal(filiaalnr)
-);
-
-CREATE TABLE Onderhoud_Fiets (
-	fietsnr INT PRIMARY KEY,
-	soort VARCHAR(45),
-	merk VARCHAR(45),
-	type VARCHAR(45),
-	standaardprijs FLOAT,
-	inkoopprijs FLOAT,
-	kleur VARCHAR(20),
-	fabrikant INT NOT NULL,
-	FOREIGN KEY (fabrikant) REFERENCES Onderhoud_Fabrikant(fabrikantnr)
+CREATE TABLE Onderhoud_Fabrikant (
+    fabrikantnr INTEGER PRIMARY KEY,
+    naam TEXT,
+    adres TEXT,
+    plaats TEXT
 );
 
 CREATE TABLE Onderhoud_Filiaal (
-	filiaalnr INT PRIMARY KEY,
-	naam VARCHAR(45),
-	adres VARCHAR(100),
-	provincie VARCHAR(20)
-);
-
-CREATE TABLE Onderhoud_Fabrikant (
-	fabrikantnr INT PRIMARY KEY,
-	naam VARCHAR(45),
-	adres VARCHAR(100),
-	plaats VARCHAR(45)
-);
-
--- Accessoire_Inkoop
-CREATE TABLE Accessoire_Inkoop (
-	inkoopnr INT PRIMARY KEY,
-	inkoopmaand INT,
-	inkoopjaar INT,
-	aantal INT,
-	accessoire INT NOT NULL,
-	FOREIGN KEY (accessoire) REFERENCES Accessoire_Inkoop_Accessoire(accessoirenr)
-);
-
-CREATE TABLE Accessoire_Inkoop_Accessoire (
-	accessoirenr INT PRIMARY KEY,
-	naam VARCHAR(45),
-	standaardprijs FLOAT,
-	inkoopprijs FLOAT,
-	soort VARCHAR(45),
-	leverancier INT NOT NULL,
-	FOREIGN KEY (leverancier) REFERENCES Accessoire_Inkoop_Leverancier(leveranciernr)
-);
-
-CREATE TABLE Accessoire_Inkoop_Leverancier (
-	leveranciernr INT PRIMARY KEY,
-	naam VARCHAR(45),
-	adres VARCHAR(100),
-	woonplaats VARCHAR(45)
-);
-
--- Fiets_Inkoop
-CREATE TABLE Fiets_Inkoop (
-	inkoopnr INT PRIMARY KEY,
-	inkoopmaand INT,
-	inkoopjaar INT,
-	aantal INT,
-	fiets INT NOT NULL,
-	FOREIGN KEY (fiets) REFERENCES Fiets_Inkoop_Fiets(fietsnr)
-);
-
-CREATE TABLE Fiets_Inkoop_Fiets (
-	fietsnr INT PRIMARY KEY,
-	soort VARCHAR(45),
-	merk VARCHAR(45),
-	type VARCHAR(45),
-	standaardprijs FLOAT,
-	inkoopprijs FLOAT,
-	kleur VARCHAR(20),
-	fabrikant INT NOT NULL,
-	FOREIGN KEY (fabrikant) REFERENCES Fiets_Inkoop_Fabrikant(fabrikantnr)
-);
-
-CREATE TABLE Fiets_Inkoop_Fabrikant (
-	fabrikantnr INT PRIMARY KEY,
-	naam VARCHAR(45),
-	adres VARCHAR(100),
-	plaats VARCHAR(45)
-);
-
--- Accessoire_Verkoop
-CREATE TABLE Accessoire_Verkoop (
-    accessoire_verkoopnr INTEGER PRIMARY KEY,
-    datum DATE,
-    aantal INTEGER,
-    verkoopprijs FLOAT,
-    klant INTEGER NOT NULL,
-    accessoire INTEGER NOT NULL,
-    monteur INTEGER NOT NULL,
-    FOREIGN KEY (klant) REFERENCES Accessoire_Verkoop_Klant(klantnr),
-    FOREIGN KEY (accessoire) REFERENCES Accessoire_Verkoop_Accessoire(accessoirenr),
-    FOREIGN KEY (monteur) REFERENCES Accessoire_Verkoop_Monteur(monteurnr)
-);
-
-CREATE TABLE Accessoire_Verkoop_Klant (
-    klantnr INTEGER PRIMARY KEY,
-    naam TEXT,
-    adres TEXT,
-    woonplaats TEXT
-    geslacht CHAR(1),
-    geboortedatum DATE
-);
-
-CREATE TABLE Accessoire_Verkoop_Accessoire (
-    accessoirenr INTEGER PRIMARY KEY,
-    naam TEXT,
-    standaardprijs FLOAT,
-    inkoopprijs FLOAT,
-    soort TEXT,
-    leverancier INTEGER NOT NULL,
-    FOREIGN KEY (leverancier) REFERENCES Accessoire_Verkoop_Leverancier(leveranciernr)
-);
-
-CREATE TABLE Accessoire_Verkoop_Monteur (
-    monteurnr INTEGER PRIMARY KEY,
-    naam TEXT,
-    woonplaats TEXT,
-    uurloon FLOAT,
-    filiaal INTEGER NOT NULL,
-    FOREIGN KEY (filiaal) REFERENCES Accessoire_Verkoop_Filiaal(filiaalnr)
-);
-
-CREATE TABLE Accessoire_Verkoop_Filiaal (
     filiaalnr INTEGER PRIMARY KEY,
     naam TEXT,
     adres TEXT,
     provincie TEXT
+);
+
+CREATE TABLE Onderhoud_Fiets (
+    fietsnr INTEGER PRIMARY KEY,
+    soort TEXT,
+    merk TEXT,
+    type TEXT,
+    standaardprijs REAL,
+    inkoopprijs REAL,
+    kleur TEXT,
+    fabrikant INTEGER NOT NULL,
+    FOREIGN KEY (fabrikant) REFERENCES Onderhoud_Fabrikant(fabrikantnr)
+);
+
+CREATE TABLE Onderhoud_Monteur (
+    monteurnr INTEGER PRIMARY KEY,
+    naam TEXT,
+    woonplaats TEXT,
+    uurloon REAL,
+    filiaal INTEGER NOT NULL,
+    FOREIGN KEY (filiaal) REFERENCES Onderhoud_Filiaal(filiaalnr)
+);
+
+CREATE TABLE Onderhoud (
+    onderhoudnr INTEGER PRIMARY KEY,
+    datum TEXT,
+    starttijd TEXT,
+    eindtijd TEXT,
+    fiets INTEGER NOT NULL,
+    monteur INTEGER NOT NULL,
+    FOREIGN KEY (fiets) REFERENCES Onderhoud_Fiets(fietsnr),
+    FOREIGN KEY (monteur) REFERENCES Onderhoud_Monteur(monteurnr)
+);
+
+-- Accessoire_Inkoop
+CREATE TABLE Accessoire_Inkoop_Leverancier (
+    leveranciernr INTEGER PRIMARY KEY,
+    naam TEXT,
+    adres TEXT,
+    woonplaats TEXT
+);
+
+CREATE TABLE Accessoire_Inkoop_Accessoire (
+    accessoirenr INTEGER PRIMARY KEY,
+    naam TEXT,
+    standaardprijs REAL,
+    inkoopprijs REAL,
+    soort TEXT,
+    leverancier INTEGER NOT NULL,
+    FOREIGN KEY (leverancier) REFERENCES Accessoire_Inkoop_Leverancier(leveranciernr)
+);
+
+CREATE TABLE Accessoire_Inkoop (
+    inkoopnr INTEGER PRIMARY KEY,
+    inkoopmaand INTEGER,
+    inkoopjaar INTEGER,
+    aantal INTEGER,
+    accessoire INTEGER NOT NULL,
+    FOREIGN KEY (accessoire) REFERENCES Accessoire_Inkoop_Accessoire(accessoirenr)
+);
+
+-- Fiets_Inkoop
+CREATE TABLE Fiets_Inkoop_Fabrikant (
+    fabrikantnr INTEGER PRIMARY KEY,
+    naam TEXT,
+    adres TEXT,
+    plaats TEXT
+);
+
+CREATE TABLE Fiets_Inkoop_Fiets (
+    fietsnr INTEGER PRIMARY KEY,
+    soort TEXT,
+    merk TEXT,
+    type TEXT,
+    standaardprijs REAL,
+    inkoopprijs REAL,
+    kleur TEXT,
+    fabrikant INTEGER NOT NULL,
+    FOREIGN KEY (fabrikant) REFERENCES Fiets_Inkoop_Fabrikant(fabrikantnr)
+);
+
+CREATE TABLE Fiets_Inkoop (
+    inkoopnr INTEGER PRIMARY KEY,
+    inkoopmaand INTEGER,
+    inkoopjaar INTEGER,
+    aantal INTEGER,
+    fiets INTEGER NOT NULL,
+    FOREIGN KEY (fiets) REFERENCES Fiets_Inkoop_Fiets(fietsnr)
+);
+
+-- Accessoire_Verkoop
+CREATE TABLE Accessoire_Verkoop_Klant (
+    klantnr INTEGER PRIMARY KEY,
+    naam TEXT,
+    adres TEXT,
+    woonplaats TEXT,
+    geslacht CHAR(1),
+    geboortedatum TEXT
 );
 
 CREATE TABLE Accessoire_Verkoop_Leverancier (
@@ -157,27 +118,60 @@ CREATE TABLE Accessoire_Verkoop_Leverancier (
     woonplaats TEXT
 );
 
--- Fiets_Verkoop
-CREATE TABLE Fiets_Verkoop (
-    fiets_verkoopnr INTEGER PRIMARY KEY,
-    datum DATE,
+CREATE TABLE Accessoire_Verkoop_Accessoire (
+    accessoirenr INTEGER PRIMARY KEY,
+    naam TEXT,
+    standaardprijs REAL,
+    inkoopprijs REAL,
+    soort TEXT,
+    leverancier INTEGER NOT NULL,
+    FOREIGN KEY (leverancier) REFERENCES Accessoire_Verkoop_Leverancier(leveranciernr)
+);
+
+CREATE TABLE Accessoire_Verkoop_Filiaal (
+    filiaalnr INTEGER PRIMARY KEY,
+    naam TEXT,
+    adres TEXT,
+    provincie TEXT
+);
+
+CREATE TABLE Accessoire_Verkoop_Monteur (
+    monteurnr INTEGER PRIMARY KEY,
+    naam TEXT,
+    woonplaats TEXT,
+    uurloon REAL,
+    filiaal INTEGER NOT NULL,
+    FOREIGN KEY (filiaal) REFERENCES Accessoire_Verkoop_Filiaal(filiaalnr)
+);
+
+CREATE TABLE Accessoire_Verkoop (
+    accessoire_verkoopnr INTEGER PRIMARY KEY,
+    datum TEXT,
     aantal INTEGER,
     verkoopprijs REAL,
     klant INTEGER NOT NULL,
-    fiets INTEGER NOT NULL,
+    accessoire INTEGER NOT NULL,
     monteur INTEGER NOT NULL,
-    FOREIGN KEY (klant) REFERENCES Fiets_Verkoop_Klant(klantnr),
-    FOREIGN KEY (fiets) REFERENCES Fiets_Verkoop_Fiets(fietsnr),
-    FOREIGN KEY (monteur) REFERENCES Fiets_Verkoop_Monteur(monteurnr)
+    FOREIGN KEY (klant) REFERENCES Accessoire_Verkoop_Klant(klantnr),
+    FOREIGN KEY (accessoire) REFERENCES Accessoire_Verkoop_Accessoire(accessoirenr),
+    FOREIGN KEY (monteur) REFERENCES Accessoire_Verkoop_Monteur(monteurnr)
 );
 
+-- Fiets_Verkoop
 CREATE TABLE Fiets_Verkoop_Klant (
     klantnr INTEGER PRIMARY KEY,
     naam TEXT,
     adres TEXT,
-    woonplaats TEXT
+    woonplaats TEXT,
     geslacht CHAR(1),
-    geboortedatum DATE
+    geboortedatum TEXT
+);
+
+CREATE TABLE Fiets_Verkoop_Fabrikant (
+    fabrikantnr INTEGER PRIMARY KEY,
+    naam TEXT,
+    adres TEXT,
+    plaats TEXT
 );
 
 CREATE TABLE Fiets_Verkoop_Fiets (
@@ -185,20 +179,11 @@ CREATE TABLE Fiets_Verkoop_Fiets (
     soort TEXT,
     merk TEXT,
     type TEXT,
-    standaardprijs FLOAT,
-    inkoopprijs FLOAT,
+    standaardprijs REAL,
+    inkoopprijs REAL,
     kleur TEXT,
     fabrikant INTEGER NOT NULL,
     FOREIGN KEY (fabrikant) REFERENCES Fiets_Verkoop_Fabrikant(fabrikantnr)
-);
-
-CREATE TABLE Fiets_Verkoop_Monteur (
-    monteurnr INTEGER PRIMARY KEY,
-    naam TEXT,
-    woonplaats TEXT,
-    uurloon FLOAT,
-    filiaal INTEGER NOT NULL,
-    FOREIGN KEY (filiaal) REFERENCES Fiets_Verkoop_Filiaal(filiaalnr)
 );
 
 CREATE TABLE Fiets_Verkoop_Filiaal (
@@ -208,9 +193,24 @@ CREATE TABLE Fiets_Verkoop_Filiaal (
     provincie TEXT
 );
 
-CREATE TABLE Fiets_Verkoop_Fabrikant (
-    fabrikantnr INTEGER PRIMARY KEY,
+CREATE TABLE Fiets_Verkoop_Monteur (
+    monteurnr INTEGER PRIMARY KEY,
     naam TEXT,
-    adres TEXT,
-    plaats TEXT
+    woonplaats TEXT,
+    uurloon REAL,
+    filiaal INTEGER NOT NULL,
+    FOREIGN KEY (filiaal) REFERENCES Fiets_Verkoop_Filiaal(filiaalnr)
+);
+
+CREATE TABLE Fiets_Verkoop (
+    fiets_verkoopnr INTEGER PRIMARY KEY,
+    datum TEXT,
+    aantal INTEGER,
+    verkoopprijs REAL,
+    klant INTEGER NOT NULL,
+    fiets INTEGER NOT NULL,
+    monteur INTEGER NOT NULL,
+    FOREIGN KEY (klant) REFERENCES Fiets_Verkoop_Klant(klantnr),
+    FOREIGN KEY (fiets) REFERENCES Fiets_Verkoop_Fiets(fietsnr),
+    FOREIGN KEY (monteur) REFERENCES Fiets_Verkoop_Monteur(monteurnr)
 );
