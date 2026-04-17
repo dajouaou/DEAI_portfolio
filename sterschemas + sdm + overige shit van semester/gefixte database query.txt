@@ -1,0 +1,124 @@
+CREATE DATABASE DWH_DB;
+
+-- Leverancier
+CREATE TABLE Leverancier(
+    leveranciernr INTEGER PRIMARY KEY,
+    naam TEXT NOT NULL,
+    adres TEXT,
+    woonplaats TEXT
+);
+
+-- Fabrikant
+CREATE TABLE Fabrikant(
+    fabrikantnr INTEGER PRIMARY KEY,
+    naam TEXT NOT NULL,
+    adres TEXT,
+    plaats TEXT
+);
+
+-- Product
+CREATE TABLE Product(
+    productnr INTEGER PRIMARY KEY,
+    product_type TEXT NOT NULL,
+    soort TEXT,
+    merk TEXT,
+    type TEXT,
+    kleur TEXT,
+    standaardprijs REAL NOT NULL,
+    verkoopprijs REAL NOT NULL,
+    leverancier INTEGER NOT NULL,
+    fabrikant INTEGER NOT NULL,
+    FOREIGN KEY (leverancier) REFERENCES Leverancier(leveranciernr),
+    FOREIGN KEY (fabrikant) REFERENCES Fabrikant(fabrikantnr)
+);
+
+-- Monteur
+CREATE TABLE Monteur(
+    monteurnr INTEGER PRIMARY KEY,
+    naam TEXT NOT NULL,
+    woonplaats TEXT,
+    uurloon REAL NOT NULL
+);
+
+-- Filiaal
+CREATE TABLE Filiaal(
+    filiaalnr INTEGER PRIMARY KEY,
+    naam TEXT NOT NULL,
+    adres TEXT,
+    provincie TEXT
+);
+
+-- Datum
+CREATE TABLE Datum(
+    datum_id INTEGER PRIMARY KEY,
+    datum DATE NOT NULL,
+    dag INTEGER NOT NULL,
+    maand TEXT NOT NULL,
+    kwartaal TEXT NOT NULL,
+    jaar INTEGER NOT NULL
+);
+
+-- Onderhoud
+CREATE TABLE Onderhoud(
+    onderhoudnr INTEGER PRIMARY KEY,
+    datum DATE NOT NULL,
+    productnr INTEGER NOT NULL,
+    monteurnr INTEGER NOT NULL,
+    filiaalnr INTEGER,
+    starttijd TIME,
+    eindtijd TIME,
+    kosten REAL,
+    duur REAL,
+    FOREIGN KEY(productnr) REFERENCES Product(productnr),
+    FOREIGN KEY(monteurnr) REFERENCES Monteur(monteurnr),
+    FOREIGN KEY(filiaalnr) REFERENCES Filiaal(filiaalnr)
+);
+
+-- Klant
+CREATE TABLE Klant(
+    klantnr INTEGER PRIMARY KEY,
+    naam TEXT NOT NULL,
+    woonplaats TEXT,
+    adres TEXT,
+    geslacht CHAR(1),
+    geboortedatum DATE
+);
+
+-- InkoopPeriode
+CREATE TABLE InkoopPeriode(
+    periodenr INTEGER PRIMARY KEY,
+    inkoopmaand TEXT NOT NULL,
+    inkoopjaar INTEGER NOT NULL
+);
+
+-- Inkoop
+CREATE TABLE Inkoop(
+    inkoopnr INTEGER PRIMARY KEY,
+    productnr INTEGER NOT NULL,
+    periodenr INTEGER NOT NULL,
+    leveranciernr INTEGER NOT NULL,
+    fabrikantnr INTEGER NOT NULL,
+    aantal INTEGER NOT NULL,
+    inkoopprijs REAL NOT NULL,
+    inkoopwaarde REAL,
+    FOREIGN KEY(productnr) REFERENCES Product(productnr),
+    FOREIGN KEY(periodenr) REFERENCES InkoopPeriode(periodenr),
+    FOREIGN KEY(leveranciernr) REFERENCES Leverancier(leveranciernr),
+    FOREIGN KEY(fabrikantnr) REFERENCES Fabrikant(fabrikantnr)
+);
+
+-- Verkoop
+CREATE TABLE Verkoop(
+    verkoopnr INTEGER PRIMARY KEY,
+    productnr INTEGER NOT NULL,
+    klantnr INTEGER NOT NULL,
+    monteurnr INTEGER,
+    filiaalnr INTEGER,
+    verkoopprijs REAL NOT NULL,
+    aantal INTEGER NOT NULL,
+    omzet REAL,
+    FOREIGN KEY(productnr) REFERENCES Product(productnr),
+    FOREIGN KEY(klantnr) REFERENCES Klant(klantnr),
+    FOREIGN KEY(monteurnr) REFERENCES Monteur(monteurnr),
+    FOREIGN KEY(filiaalnr) REFERENCES Filiaal(filiaalnr)
+);
