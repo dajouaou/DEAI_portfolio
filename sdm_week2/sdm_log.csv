@@ -1,23 +1,106 @@
-timestamp,stap,tabel,actie,aantal,status,melding
-2026-04-15 11:35:32,FULL_REFRESH,SDM,delete_all,23,OK,alle sdm tabellen geleegd
-2026-04-15 11:35:36,LOAD,Onderhoud_Fabrikant,insert,11,OK,
-2026-04-15 11:35:36,LOAD,Onderhoud_Filiaal,insert,5,OK,
-2026-04-15 11:35:36,LOAD,Onderhoud_Fiets,insert,30,OK,
-2026-04-15 11:35:36,LOAD,Onderhoud_Monteur,insert,15,OK,
-2026-04-15 11:35:36,LOAD,Onderhoud,insert,50,OK,
-2026-04-15 11:35:39,LOAD,Accessoire_Inkoop_Leverancier,insert,5,OK,
-2026-04-15 11:35:39,LOAD,Accessoire_Inkoop_Accessoire,insert,13,OK,
-2026-04-15 11:35:39,LOAD,Accessoire_Inkoop,insert,50,OK,
-2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Klant,insert,20,OK,
-2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Accessoire,insert,10,OK,
-2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Monteur,insert,10,OK,
-2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Filiaal,insert,4,OK,
-2026-04-15 11:35:41,LOAD,Accessoire_Verkoop_Leverancier,insert,5,OK,
-2026-04-15 11:35:41,LOAD,Accessoire_Verkoop,insert,100,OK,
-2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Klant,insert,25,OK,
-2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Fiets,insert,75,OK,
-2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Monteur,insert,10,OK,
-2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Fabrikant,insert,10,OK,
-2026-04-15 11:35:45,LOAD,Fiets_Verkoop_Filiaal,insert,4,OK,
-2026-04-15 11:35:45,LOAD,Fiets_Verkoop,insert,150,OK,
-2026-04-15 11:35:49,CHECK,Fiets_Verkoop_Filiaal,select_check,0,OK,controlequery uitgevoerd
+run_id,timestamp,laag,stap,bron_database,bron_tabel,doel_tabel,actie,aantal_bron,aantal_doel_voor,aantal_verwerkt,aantal_doel_na,status,melding
+20260605_115020,2026-06-05 11:50:20,SDM,START,,,,start_pipeline,0,0,0,0,OK,SDM pipeline gestart
+20260605_115020,2026-06-05 11:50:20,SDM,CREATE,,,ALLE_SDM_TABELLEN,create_tables,0,0,0,0,OK,SDM tabellen aangemaakt of bestonden al
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Onderhoud,delete,0,50,50,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Accessoire_Inkoop,delete,0,50,50,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Fiets_Inkoop,delete,0,0,0,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Accessoire_Verkoop,delete,0,100,100,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Fiets_Verkoop,delete,0,150,150,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Onderhoud_Monteur,delete,0,15,15,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Onderhoud_Fiets,delete,0,30,30,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Onderhoud_Filiaal,delete,0,5,5,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Onderhoud_Fabrikant,delete,0,11,11,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Accessoire_Inkoop_Accessoire,delete,0,13,13,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Accessoire_Inkoop_Leverancier,delete,0,5,5,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Fiets_Inkoop_Fiets,delete,0,0,0,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Fiets_Inkoop_Fabrikant,delete,0,0,0,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Accessoire_Verkoop_Accessoire,delete,0,10,10,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:20,SDM,RESET,,,Accessoire_Verkoop_Monteur,delete,0,10,10,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,RESET,,,Accessoire_Verkoop_Filiaal,delete,0,4,4,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,RESET,,,Accessoire_Verkoop_Leverancier,delete,0,5,5,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,RESET,,,Accessoire_Verkoop_Klant,delete,0,20,20,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,RESET,,,Fiets_Verkoop_Fiets,delete,0,75,75,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,RESET,,,Fiets_Verkoop_Monteur,delete,0,10,10,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,RESET,,,Fiets_Verkoop_Filiaal,delete,0,4,4,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,RESET,,,Fiets_Verkoop_Fabrikant,delete,0,10,10,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,RESET,,,Fiets_Verkoop_Klant,delete,0,25,25,0,OK,tabel geleegd
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,,,open_database,0,0,0,0,OK,bronconnectie geopend
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Klant,Accessoire_Verkoop_Klant,select,20,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Klant,Accessoire_Verkoop_Klant,insert,20,0,20,20,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Leverancier,Accessoire_Verkoop_Leverancier,select,5,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Leverancier,Accessoire_Verkoop_Leverancier,insert,5,0,5,5,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Accessoire,Accessoire_Verkoop_Accessoire,select,10,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Accessoire,Accessoire_Verkoop_Accessoire,insert,10,0,10,10,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Filiaal,Accessoire_Verkoop_Filiaal,select,4,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Filiaal,Accessoire_Verkoop_Filiaal,insert,4,0,4,4,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Monteur,Accessoire_Verkoop_Monteur,select,10,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Monteur,Accessoire_Verkoop_Monteur,insert,10,0,10,10,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Accessoire_Verkoop,Accessoire_Verkoop,select,100,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,Accessoire_Verkoop,Accessoire_Verkoop,insert,100,0,100,100,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_1_Accessoireverkoop.db,,,close_database,0,0,0,0,OK,bronconnectie gesloten
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,,,open_database,0,0,0,0,OK,bronconnectie geopend
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Klant,Fiets_Verkoop_Klant,select,25,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Klant,Fiets_Verkoop_Klant,insert,25,0,25,25,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Fabrikant,Fiets_Verkoop_Fabrikant,select,10,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Fabrikant,Fiets_Verkoop_Fabrikant,insert,10,0,10,10,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Fiets,Fiets_Verkoop_Fiets,select,75,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Fiets,Fiets_Verkoop_Fiets,insert,75,0,75,75,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Filiaal,Fiets_Verkoop_Filiaal,select,4,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Filiaal,Fiets_Verkoop_Filiaal,insert,4,0,4,4,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Monteur,Fiets_Verkoop_Monteur,select,10,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Monteur,Fiets_Verkoop_Monteur,insert,10,0,10,10,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Fiets_Verkoop,Fiets_Verkoop,select,150,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,Fiets_Verkoop,Fiets_Verkoop,insert,150,0,150,150,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_2_Fietsverkoop.db,,,close_database,0,0,0,0,OK,bronconnectie gesloten
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,,,open_database,0,0,0,0,OK,bronconnectie geopend
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Fabrikant,Onderhoud_Fabrikant,select,11,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Fabrikant,Onderhoud_Fabrikant,insert,11,0,11,11,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Filiaal,Onderhoud_Filiaal,select,5,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Filiaal,Onderhoud_Filiaal,insert,5,0,5,5,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Fiets,Onderhoud_Fiets,select,30,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Fiets,Onderhoud_Fiets,insert,30,0,30,30,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Monteur,Onderhoud_Monteur,select,15,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Monteur,Onderhoud_Monteur,insert,15,0,15,15,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Onderhoud,Onderhoud,select,50,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,Onderhoud,Onderhoud,insert,50,0,50,50,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_3_Onderhoud.db,,,close_database,0,0,0,0,OK,bronconnectie gesloten
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_4_Accessoire_Inkoop.db,,,open_database,0,0,0,0,OK,bronconnectie geopend
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_4_Accessoire_Inkoop.db,Leverancier,Accessoire_Inkoop_Leverancier,select,5,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_4_Accessoire_Inkoop.db,Leverancier,Accessoire_Inkoop_Leverancier,insert,5,0,5,5,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_4_Accessoire_Inkoop.db,Accessoire,Accessoire_Inkoop_Accessoire,select,13,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_4_Accessoire_Inkoop.db,Accessoire,Accessoire_Inkoop_Accessoire,insert,13,0,13,13,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_4_Accessoire_Inkoop.db,Accessoire_Inkoop,Accessoire_Inkoop,select,50,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_4_Accessoire_Inkoop.db,Accessoire_Inkoop,Accessoire_Inkoop,insert,50,0,50,50,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_4_Accessoire_Inkoop.db,,,close_database,0,0,0,0,OK,bronconnectie gesloten
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_5_Fiets_Inkoop.db,,,open_database,0,0,0,0,OK,bronconnectie geopend
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_5_Fiets_Inkoop.db,Fabrikant,Fiets_Inkoop_Fabrikant,select,10,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_5_Fiets_Inkoop.db,Fabrikant,Fiets_Inkoop_Fabrikant,insert,10,0,10,10,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_5_Fiets_Inkoop.db,Fiets,Fiets_Inkoop_Fiets,select,75,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_5_Fiets_Inkoop.db,Fiets,Fiets_Inkoop_Fiets,insert,75,0,75,75,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,EXTRACT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_5_Fiets_Inkoop.db,Fiets_Inkoop,Fiets_Inkoop,select,100,0,0,0,OK,brondata gelezen
+20260605_115020,2026-06-05 11:50:21,SDM,LOAD,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_5_Fiets_Inkoop.db,Fiets_Inkoop,Fiets_Inkoop,insert,100,0,100,100,OK,aantal geladen rijen klopt
+20260605_115020,2026-06-05 11:50:21,SDM,CONNECT,C:\Users\doaaj\Semester4\DEAI_portfolio\sdm_week2\BikeToDrive_5_Fiets_Inkoop.db,,,close_database,0,0,0,0,OK,bronconnectie gesloten
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Onderhoud,count,0,0,0,50,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Inkoop,count,0,0,0,50,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Inkoop,count,0,0,0,100,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Verkoop,count,0,0,0,100,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Verkoop,count,0,0,0,150,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Onderhoud_Monteur,count,0,0,0,15,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Onderhoud_Fiets,count,0,0,0,30,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Onderhoud_Filiaal,count,0,0,0,5,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Onderhoud_Fabrikant,count,0,0,0,11,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Inkoop_Accessoire,count,0,0,0,13,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Inkoop_Leverancier,count,0,0,0,5,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Inkoop_Fiets,count,0,0,0,75,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Inkoop_Fabrikant,count,0,0,0,10,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Verkoop_Accessoire,count,0,0,0,10,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Verkoop_Monteur,count,0,0,0,10,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Verkoop_Filiaal,count,0,0,0,4,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Verkoop_Leverancier,count,0,0,0,5,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Accessoire_Verkoop_Klant,count,0,0,0,20,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Verkoop_Fiets,count,0,0,0,75,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Verkoop_Monteur,count,0,0,0,10,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Verkoop_Filiaal,count,0,0,0,4,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Verkoop_Fabrikant,count,0,0,0,10,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDCONTROLE,,,Fiets_Verkoop_Klant,count,0,0,0,25,OK,eindaantal gecontroleerd
+20260605_115020,2026-06-05 11:50:21,SDM,EINDE,,,,end_pipeline,0,0,0,0,OK,SDM pipeline afgerond

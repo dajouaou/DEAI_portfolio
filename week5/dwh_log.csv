@@ -1,4 +1,34 @@
-timestamp,stap,tabel,actie,aantal,status,melding
-2026-04-16 15:11:42,TEST,Fiets_Verkoop_Klant,update_sdm,1,OK,woonplaats aangepast
-2026-04-16 15:11:42,TEST,Accessoire_Verkoop_Klant,update_sdm,1,OK,woonplaats aangepast
-2026-04-16 15:12:05,SCD2,Monteur,historisering,10,OK,
+run_id,timestamp,laag,stap,tabel,actie,aantal_sdm,aantal_dwh_voor,aantal_insert,aantal_update,aantal_skipped,aantal_error,aantal_dwh_na,status,melding
+20260605_115138,2026-06-05 11:51:38,DWH,START,,start_pipeline,0,0,0,0,0,0,0,OK,DWH pipeline gestart
+20260605_115138,2026-06-05 11:51:38,DWH,CREATE,,create_tables,0,0,0,0,0,0,0,OK,DWH tabellen aangemaakt of bestonden al
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Verkoop,delete,0,250,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Onderhoud,delete,0,50,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Inkoop,delete,0,150,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Klant,delete,0,45,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Product,delete,0,203,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Leverancier,delete,0,30,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Monteur,delete,0,35,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Filiaal,delete,0,13,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,Datum,delete,0,196,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,RESET,InkoopPeriode,delete,0,12,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115138,2026-06-05 11:51:38,DWH,SCD1,Klant,insert_full_refresh,45,0,45,0,0,0,45,OK,Klant geladen
+20260605_115138,2026-06-05 11:51:38,DWH,SCD1,Product,insert_full_refresh,203,0,203,0,0,0,203,OK,Product geladen
+20260605_115138,2026-06-05 11:51:38,DWH,SCD1,Leverancier,insert_full_refresh,30,0,30,0,0,0,30,OK,Leverancier geladen
+20260605_115138,2026-06-05 11:51:38,DWH,SCD2,Monteur,insert_current_records,35,0,35,0,0,0,35,OK,Monteur SCD2 geladen
+20260605_115138,2026-06-05 11:51:38,DWH,SCD2,Filiaal,insert_current_records,13,0,13,0,0,0,13,OK,Filiaal SCD2 geladen
+20260605_115138,2026-06-05 11:51:38,DWH,DIM,Datum,insert_full_refresh,300,0,196,0,104,0,196,OK,Datum geladen
+20260605_115138,2026-06-05 11:51:38,DWH,DIM,InkoopPeriode,insert_full_refresh,150,0,12,0,138,0,12,OK,InkoopPeriode geladen
+20260605_115138,2026-06-05 11:51:38,DWH,FACT,Verkoop,insert_full_refresh,250,0,250,0,0,0,250,OK,Verkoop geladen
+20260605_115138,2026-06-05 11:51:38,DWH,FACT,Onderhoud,insert_full_refresh,50,0,50,0,0,0,50,OK,Onderhoud geladen
+20260605_115138,2026-06-05 11:51:38,DWH,FACT,Inkoop,insert_full_refresh,150,0,150,0,0,0,150,OK,Inkoop geladen
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Klant,count,0,0,0,0,0,0,45,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Product,count,0,0,0,0,0,0,203,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Leverancier,count,0,0,0,0,0,0,30,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Monteur,count,0,0,0,0,0,0,35,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Filiaal,count,0,0,0,0,0,0,13,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Datum,count,0,0,0,0,0,0,196,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,InkoopPeriode,count,0,0,0,0,0,0,12,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Verkoop,count,0,0,0,0,0,0,250,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Onderhoud,count,0,0,0,0,0,0,50,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Inkoop,count,0,0,0,0,0,0,150,OK,eindaantal gecontroleerd
+20260605_115138,2026-06-05 11:51:38,DWH,EINDE,,end_pipeline,0,0,0,0,0,0,0,OK,DWH pipeline afgerond
