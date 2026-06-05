@@ -1,34 +1,213 @@
 run_id,timestamp,laag,stap,tabel,actie,aantal_sdm,aantal_dwh_voor,aantal_insert,aantal_update,aantal_skipped,aantal_error,aantal_dwh_na,status,melding
-20260605_115138,2026-06-05 11:51:38,DWH,START,,start_pipeline,0,0,0,0,0,0,0,OK,DWH pipeline gestart
-20260605_115138,2026-06-05 11:51:38,DWH,CREATE,,create_tables,0,0,0,0,0,0,0,OK,DWH tabellen aangemaakt of bestonden al
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Verkoop,delete,0,250,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Onderhoud,delete,0,50,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Inkoop,delete,0,150,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Klant,delete,0,45,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Product,delete,0,203,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Leverancier,delete,0,30,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Monteur,delete,0,35,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Filiaal,delete,0,13,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,Datum,delete,0,196,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,RESET,InkoopPeriode,delete,0,12,0,0,0,0,0,OK,DWH tabel geleegd
-20260605_115138,2026-06-05 11:51:38,DWH,SCD1,Klant,insert_full_refresh,45,0,45,0,0,0,45,OK,Klant geladen
-20260605_115138,2026-06-05 11:51:38,DWH,SCD1,Product,insert_full_refresh,203,0,203,0,0,0,203,OK,Product geladen
-20260605_115138,2026-06-05 11:51:38,DWH,SCD1,Leverancier,insert_full_refresh,30,0,30,0,0,0,30,OK,Leverancier geladen
-20260605_115138,2026-06-05 11:51:38,DWH,SCD2,Monteur,insert_current_records,35,0,35,0,0,0,35,OK,Monteur SCD2 geladen
-20260605_115138,2026-06-05 11:51:38,DWH,SCD2,Filiaal,insert_current_records,13,0,13,0,0,0,13,OK,Filiaal SCD2 geladen
-20260605_115138,2026-06-05 11:51:38,DWH,DIM,Datum,insert_full_refresh,300,0,196,0,104,0,196,OK,Datum geladen
-20260605_115138,2026-06-05 11:51:38,DWH,DIM,InkoopPeriode,insert_full_refresh,150,0,12,0,138,0,12,OK,InkoopPeriode geladen
-20260605_115138,2026-06-05 11:51:38,DWH,FACT,Verkoop,insert_full_refresh,250,0,250,0,0,0,250,OK,Verkoop geladen
-20260605_115138,2026-06-05 11:51:38,DWH,FACT,Onderhoud,insert_full_refresh,50,0,50,0,0,0,50,OK,Onderhoud geladen
-20260605_115138,2026-06-05 11:51:38,DWH,FACT,Inkoop,insert_full_refresh,150,0,150,0,0,0,150,OK,Inkoop geladen
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Klant,count,0,0,0,0,0,0,45,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Product,count,0,0,0,0,0,0,203,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Leverancier,count,0,0,0,0,0,0,30,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Monteur,count,0,0,0,0,0,0,35,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Filiaal,count,0,0,0,0,0,0,13,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Datum,count,0,0,0,0,0,0,196,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,InkoopPeriode,count,0,0,0,0,0,0,12,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Verkoop,count,0,0,0,0,0,0,250,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Onderhoud,count,0,0,0,0,0,0,50,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDCONTROLE,Inkoop,count,0,0,0,0,0,0,150,OK,eindaantal gecontroleerd
-20260605_115138,2026-06-05 11:51:38,DWH,EINDE,,end_pipeline,0,0,0,0,0,0,0,OK,DWH pipeline afgerond
+20260605_114413,2026-06-05 11:44:13,DWH,START,,start_pipeline,0,0,0,0,0,0,0,OK,DWH pipeline gestart
+20260605_114413,2026-06-05 11:44:13,DWH,CREATE,,create_tables,0,0,0,0,0,0,0,OK,DWH tabellen bestaan of zijn aangemaakt
+20260605_114413,2026-06-05 11:44:13,DWH,SCD1,Klant,insert_update,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT klantnr, naam, woonplaats, adres, geslacht, geboortedatum, 1 AS source_id
+        FROM Fiets_Verkoop_Klant
+
+        UNION ALL
+
+        SELECT klantnr, naam, woonplaats, adres, geslacht, geboortedatum, 2 AS source_id
+        FROM Accessoire_Verkoop_Klant
+    ': no such table: Accessoire_Verkoop_Klant"
+20260605_114413,2026-06-05 11:44:13,DWH,SCD1,Product,insert_update,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT accessoirenr AS productnr, 'accessoire' AS product_type, soort, naam AS merk, NULL AS type, NULL AS kleur, leverancier AS fabrikant
+        FROM Accessoire_Verkoop_Accessoire
+
+        UNION ALL
+
+        SELECT accessoirenr AS productnr, 'accessoire' AS product_type, soort, naam AS merk, NULL AS type, NULL AS kleur, leverancier AS fabrikant
+        FROM Accessoire_Inkoop_Accessoire
+
+        UNION ALL
+
+        SELECT fietsnr AS productnr, 'fiets' AS product_type, soort, merk, type, kleur, fabrikant
+        FROM Fiets_Verkoop_Fiets
+
+        UNION ALL
+
+        SELECT fietsnr AS productnr, 'fiets' AS product_type, soort, merk, type, kleur, fabrikant
+        FROM Fiets_Inkoop_Fiets
+    ': no such table: Fiets_Inkoop_Fiets"
+20260605_114413,2026-06-05 11:44:13,DWH,SCD1,Leverancier,insert_update,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT leveranciernr, naam, adres, woonplaats
+        FROM Accessoire_Verkoop_Leverancier
+
+        UNION ALL
+
+        SELECT leveranciernr, naam, adres, woonplaats
+        FROM Accessoire_Inkoop_Leverancier
+
+        UNION ALL
+
+        SELECT fabrikantnr AS leveranciernr, naam, adres, plaats AS woonplaats
+        FROM Fiets_Verkoop_Fabrikant
+
+        UNION ALL
+
+        SELECT fabrikantnr AS leveranciernr, naam, adres, plaats AS woonplaats
+        FROM Fiets_Inkoop_Fabrikant
+    ': no such table: Fiets_Inkoop_Fabrikant"
+20260605_114413,2026-06-05 11:44:13,DWH,DIM,Datum,insert,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT datum FROM Fiets_Verkoop
+        UNION ALL
+        SELECT datum FROM Accessoire_Verkoop
+        UNION ALL
+        SELECT datum FROM Onderhoud
+    ': no such table: Onderhoud"
+20260605_114413,2026-06-05 11:44:13,DWH,DIM,InkoopPeriode,insert,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT inkoopmaand, inkoopjaar FROM Fiets_Inkoop
+        UNION ALL
+        SELECT inkoopmaand, inkoopjaar FROM Accessoire_Inkoop
+    ': no such table: Accessoire_Inkoop"
+20260605_114413,2026-06-05 11:44:13,DWH,SCD2,Monteur,historiseren,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT monteurnr, naam, woonplaats, uurloon FROM Accessoire_Verkoop_Monteur
+        UNION ALL
+        SELECT monteurnr, naam, woonplaats, uurloon FROM Fiets_Verkoop_Monteur
+        UNION ALL
+        SELECT monteurnr, naam, woonplaats, uurloon FROM Onderhoud_Monteur
+    ': no such table: Onderhoud_Monteur"
+20260605_114413,2026-06-05 11:44:13,DWH,SCD2,Filiaal,historiseren,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT filiaalnr, naam, adres, provincie FROM Accessoire_Verkoop_Filiaal
+        UNION ALL
+        SELECT filiaalnr, naam, adres, provincie FROM Fiets_Verkoop_Filiaal
+        UNION ALL
+        SELECT filiaalnr, naam, adres, provincie FROM Onderhoud_Filiaal
+    ': no such table: Onderhoud_Filiaal"
+20260605_114413,2026-06-05 11:44:13,DWH,FACT,Verkoop,insert_incremental,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT
+            fv.fiets_verkoopnr AS verkoopnr,
+            1 AS source_id,
+            fv.datum,
+            fv.aantal,
+            fv.verkoopprijs,
+            fv.klant,
+            fv.fiets AS productnr,
+            'fiets' AS product_type,
+            fv.monteur,
+            k.naam AS klant_naam,
+            k.geboortedatum,
+            m.naam AS monteur_naam,
+            m.woonplaats AS monteur_woonplaats,
+            f.adres AS filiaal_adres
+        FROM Fiets_Verkoop fv
+        JOIN Fiets_Verkoop_Klant k ON fv.klant = k.klantnr
+        JOIN Fiets_Verkoop_Monteur m ON fv.monteur = m.monteurnr
+        JOIN Fiets_Verkoop_Filiaal f ON m.filiaal = f.filiaalnr
+
+        UNION ALL
+
+        SELECT
+            av.accessoire_verkoopnr AS verkoopnr,
+            2 AS source_id,
+            av.datum,
+            av.aantal,
+            av.verkoopprijs,
+            av.klant,
+            av.accessoire AS productnr,
+            'accessoire' AS product_type,
+            av.monteur,
+            k.naam AS klant_naam,
+            k.geboortedatum,
+            m.naam AS monteur_naam,
+            m.woonplaats AS monteur_woonplaats,
+            f.adres AS filiaal_adres
+        FROM Accessoire_Verkoop av
+        JOIN Accessoire_Verkoop_Klant k ON av.klant = k.klantnr
+        JOIN Accessoire_Verkoop_Monteur m ON av.monteur = m.monteurnr
+        JOIN Accessoire_Verkoop_Filiaal f ON m.filiaal = f.filiaalnr
+    ': no such table: Accessoire_Verkoop"
+20260605_114413,2026-06-05 11:44:13,DWH,FACT,Onderhoud,insert_incremental,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT
+            o.onderhoudnr,
+            o.datum,
+            o.starttijd,
+            o.eindtijd,
+            o.fiets AS productnr,
+            'fiets' AS product_type,
+            m.naam AS monteur_naam,
+            m.woonplaats AS monteur_woonplaats,
+            m.uurloon,
+            f.adres AS filiaal_adres
+        FROM Onderhoud o
+        JOIN Onderhoud_Monteur m ON o.monteur = m.monteurnr
+        JOIN Onderhoud_Filiaal f ON m.filiaal = f.filiaalnr
+    ': no such table: Onderhoud"
+20260605_114413,2026-06-05 11:44:13,DWH,FACT,Inkoop,insert_incremental,0,0,0,0,0,0,0,ERROR,"Execution failed on sql '
+        SELECT 
+            ai.inkoopnr,
+            1 AS source_id,
+            ai.inkoopmaand,
+            ai.inkoopjaar,
+            ai.aantal,
+            a.accessoirenr AS productnr,
+            'accessoire' AS product_type,
+            l.naam AS leverancier_naam,
+            l.adres AS leverancier_adres,
+            a.inkoopprijs
+        FROM Accessoire_Inkoop ai
+        JOIN Accessoire_Inkoop_Accessoire a ON ai.accessoire = a.accessoirenr
+        JOIN Accessoire_Inkoop_Leverancier l ON a.leverancier = l.leveranciernr
+
+        UNION ALL
+
+        SELECT 
+            fi.inkoopnr,
+            2 AS source_id,
+            fi.inkoopmaand,
+            fi.inkoopjaar,
+            fi.aantal,
+            f.fietsnr AS productnr,
+            'fiets' AS product_type,
+            fab.naam AS leverancier_naam,
+            fab.adres AS leverancier_adres,
+            f.inkoopprijs
+        FROM Fiets_Inkoop fi
+        JOIN Fiets_Inkoop_Fiets f ON fi.fiets = f.fietsnr
+        JOIN Fiets_Inkoop_Fabrikant fab ON f.fabrikant = fab.fabrikantnr
+    ': no such table: Fiets_Inkoop"
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Klant,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Product,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Leverancier,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Monteur,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Filiaal,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Datum,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,InkoopPeriode,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Verkoop,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Onderhoud,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDCONTROLE,Inkoop,count,0,0,0,0,0,0,0,OK,eindaantal gecontroleerd
+20260605_114413,2026-06-05 11:44:13,DWH,EINDE,,end_pipeline,0,0,0,0,0,0,0,OK,DWH pipeline afgerond
+run_id,timestamp,laag,stap,tabel,actie,aantal_sdm,aantal_dwh_voor,aantal_insert,aantal_update,aantal_skipped,aantal_error,aantal_dwh_na,status,melding
+20260605_115034,2026-06-05 11:50:34,DWH,START,,start_pipeline,0,0,0,0,0,0,0,OK,DWH pipeline gestart
+20260605_115034,2026-06-05 11:50:34,DWH,CREATE,,create_tables,0,0,0,0,0,0,0,OK,DWH tabellen aangemaakt of bestonden al
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Verkoop,delete,0,251,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Onderhoud,delete,0,29,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Inkoop,delete,0,150,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Klant,delete,0,30,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Product,delete,0,88,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Leverancier,delete,0,15,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Monteur,delete,0,11,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Filiaal,delete,0,4,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,Datum,delete,0,172,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,RESET,InkoopPeriode,delete,0,12,0,0,0,0,0,OK,DWH tabel geleegd
+20260605_115034,2026-06-05 11:50:34,DWH,SCD1,Klant,insert_full_refresh,45,0,45,0,0,0,45,OK,Klant geladen
+20260605_115034,2026-06-05 11:50:34,DWH,SCD1,Product,insert_full_refresh,203,0,203,0,0,0,203,OK,Product geladen
+20260605_115034,2026-06-05 11:50:34,DWH,SCD1,Leverancier,insert_full_refresh,30,0,30,0,0,0,30,OK,Leverancier geladen
+20260605_115034,2026-06-05 11:50:34,DWH,SCD2,Monteur,insert_current_records,35,0,35,0,0,0,35,OK,Monteur SCD2 geladen
+20260605_115034,2026-06-05 11:50:34,DWH,SCD2,Filiaal,insert_current_records,13,0,13,0,0,0,13,OK,Filiaal SCD2 geladen
+20260605_115034,2026-06-05 11:50:34,DWH,DIM,Datum,insert_full_refresh,300,0,196,0,104,0,196,OK,Datum geladen
+20260605_115034,2026-06-05 11:50:34,DWH,DIM,InkoopPeriode,insert_full_refresh,150,0,12,0,138,0,12,OK,InkoopPeriode geladen
+20260605_115034,2026-06-05 11:50:34,DWH,FACT,Verkoop,insert_full_refresh,250,0,250,0,0,0,250,OK,Verkoop geladen
+20260605_115034,2026-06-05 11:50:34,DWH,FACT,Onderhoud,insert_full_refresh,50,0,50,0,0,0,50,OK,Onderhoud geladen
+20260605_115034,2026-06-05 11:50:34,DWH,FACT,Inkoop,insert_full_refresh,150,0,150,0,0,0,150,OK,Inkoop geladen
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Klant,count,0,0,0,0,0,0,45,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Product,count,0,0,0,0,0,0,203,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Leverancier,count,0,0,0,0,0,0,30,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Monteur,count,0,0,0,0,0,0,35,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Filiaal,count,0,0,0,0,0,0,13,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Datum,count,0,0,0,0,0,0,196,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,InkoopPeriode,count,0,0,0,0,0,0,12,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Verkoop,count,0,0,0,0,0,0,250,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Onderhoud,count,0,0,0,0,0,0,50,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDCONTROLE,Inkoop,count,0,0,0,0,0,0,150,OK,eindaantal gecontroleerd
+20260605_115034,2026-06-05 11:50:34,DWH,EINDE,,end_pipeline,0,0,0,0,0,0,0,OK,DWH pipeline afgerond
